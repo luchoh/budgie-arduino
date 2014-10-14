@@ -4,7 +4,7 @@
 #include "lcd.h"
 #include "ir.h"
 
-int UpdateAll(int x);
+void UpdateAll(int x);
 void SilencePopsOn();
 void SilencePopsOff();
 void ButtonRead();
@@ -135,7 +135,7 @@ void SilencePopsOff() {
 } /*SilencePopsOff*/
 
 
-int UpdateAll(int x) {
+void UpdateAll(int x) {
     //update relays
     digitalWrite(LATCH_595, LOW);
     shiftOut(DATA_595, CLK_595, MSBFIRST, x);
